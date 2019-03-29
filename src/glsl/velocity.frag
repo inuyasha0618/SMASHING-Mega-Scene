@@ -38,9 +38,14 @@ void main() {
     } else {
         velocity.xz *= 0.99;
         velocity.y -= step(EPS, positionOffset + isPhysicsActive) * ( (1.0 - (defaultPosition.y + 200.0) / 500.0) + random(defaultPosition.xy)) * gravity;
+        // velocity.y -= step(EPS, positionOffset + isPhysicsActive) * ( (1.0 - 0.0) + random(defaultPosition.xy)) * gravity;
     }
 
+    // velocity.xz *= 0.99;
+    // velocity.y -= step(EPS, positionOffset + isPhysicsActive) * ( (1.0 - (defaultPosition.y + 200.0) / 500.0) + random(defaultPosition.xy)) * gravity;
+
     velocity += (normalize(position - mouse3d) + mouse3dVelocity * 0.2) * pow(toMouseStrength, 2.0) * (1.0 + random(vec2(position.x + position.y, position.z)) * 0.3) * mouseForce;
+    // velocity += (mouse3dVelocity * 0.2) * pow(toMouseStrength, 2.0) * (1.0 + random(vec2(position.x + position.y, position.z)) * 0.3) * mouseForce;
     velocity *= 1.0 - step(EPS, resetAnimation);
 
     gl_FragColor = vec4(velocity, 1.0);

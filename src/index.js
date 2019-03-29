@@ -265,8 +265,10 @@ function _render(dt) {
         _ray.origin.y = math.lerp((1 - ratio) * 400 + Math.sin(ratio2 * Math.PI * 5) * 150, _ray.origin.y, ratio3);
         _ray.origin.z = math.lerp(Math.sin(ratio2 * Math.PI * 6) * 150, _ray.origin.z, ratio3);
         fbo.velocityUniforms.mouseRadius.value = (1 - ratio) * 60 + Math.sin(ratio2 * Math.PI * 6) * 90 * ratio3 + 105;
+        console.log('_initAnimation < 1');
     } else {
         if(!_hasSetDefault) {
+            console.log('!_hasSetDefault');
             _setDefault();
         }
     }
@@ -288,11 +290,13 @@ function _render(dt) {
     }
 
     if(settings.resetAnimation > 0) {
+        console.log('settings.resetAnimation > 0');
         settings.resetAnimation += dt * 0.0005;
     }
     fbo.update(dt);
 
     if(settings.resetAnimation > 1) {
+        console.log('settings.resetAnimation > 1');
         settings.resetAnimation = 0;
     }
 

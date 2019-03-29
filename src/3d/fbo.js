@@ -209,9 +209,9 @@ function _createPositionTexture() {
 function update(dt) {
 
     _updateVelocity(dt);
-    _renderer.autoClearColor = false;
+    // _renderer.autoClearColor = false;
     _updatePosition(dt);
-    _renderer.autoClearColor = true;
+    // _renderer.autoClearColor = true;
 
     exports.positionRenderTarget = _positionRenderTarget;
 }

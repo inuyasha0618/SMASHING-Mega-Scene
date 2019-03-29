@@ -276,19 +276,19 @@ function init() {
     }
 
     mesh = exports.mesh = new THREE.Points(_geometry, material);
-    mesh.customDepthMaterial = _depthMaterial = new THREE.ShaderMaterial( {
-        uniforms: {
-            time: { type: 'f', value: 0 },
-            realCameraPosition: { type: 'v3', value: settings.cameraPosition },
-            texturePosition: { type: 't', value: undef },
-            textureDefaultPosition: { type: 't', value: undef }
-        },
-        vertexShader: shaderParse(glslify('../glsl/headDepth.vert')),
-        fragmentShader: shaderParse(glslify('../glsl/headDepth.frag')),
-        blending: THREE.NoBlending,
-        depthTest: true,
-        depthWrite: true
-    });
+    // mesh.customDepthMaterial = _depthMaterial = new THREE.ShaderMaterial( {
+    //     uniforms: {
+    //         time: { type: 'f', value: 0 },
+    //         realCameraPosition: { type: 'v3', value: settings.cameraPosition },
+    //         texturePosition: { type: 't', value: undef },
+    //         textureDefaultPosition: { type: 't', value: undef }
+    //     },
+    //     vertexShader: shaderParse(glslify('../glsl/headDepth.vert')),
+    //     fragmentShader: shaderParse(glslify('../glsl/headDepth.frag')),
+    //     blending: THREE.NoBlending,
+    //     depthTest: true,
+    //     depthWrite: true
+    // });
     mesh.castShadow = true;
     mesh.receiveShadow = true;
 
@@ -311,7 +311,7 @@ function update(dt) {
     mesh.material.uniforms.textureDefaultPosition.value = fbo.defaultPositionRenderTarget;
     mesh.material.uniforms.texturePosition.value = fbo.positionRenderTarget;
     mesh.material.uniforms.normalNoise.value = exports.normalNoise;
-    _depthMaterial.uniforms.textureDefaultPosition.value = fbo.defaultPositionRenderTarget;
-    _depthMaterial.uniforms.texturePosition.value = fbo.positionRenderTarget;
+    // _depthMaterial.uniforms.textureDefaultPosition.value = fbo.defaultPositionRenderTarget;
+    // _depthMaterial.uniforms.texturePosition.value = fbo.positionRenderTarget;
 
 }
