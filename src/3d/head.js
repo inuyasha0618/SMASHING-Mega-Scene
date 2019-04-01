@@ -206,6 +206,7 @@ function init() {
         areaThreshold = areaThresholds[i];
         amount = 0;
         while(((i === len - 1) || (areaSum + areaPerParticle <= areaThreshold)) && remainder > 0) {
+        // while(((areaSum + areaPerParticle < areaThreshold)) && remainder > 0) {
             areaSum += areaPerParticle;
             amount++;
             remainder--;
@@ -248,7 +249,7 @@ function init() {
     diffuseMap.format = THREE.RGBFormat;
 
     var material;
-
+    console.log(glslify('../glsl/head.vert'));
     var vs = shaderParse(glslify('../glsl/head.vert'));
     var fs = shaderParse(glslify('../glsl/head.frag'));
 
