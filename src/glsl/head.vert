@@ -73,8 +73,8 @@ void main() {
 
 //   pos += normal * 0.5;
 
-  transformedNormal = rotateX(transformedNormal, offsetDistance * 0.02 * sin(fract(position.z * 21321.5125)));
-  transformedNormal = rotateY(transformedNormal, offsetDistance * 0.02 * sin(fract(position.z * 51211.41)));
+//   transformedNormal = rotateX(transformedNormal, offsetDistance * 0.02 * sin(fract(position.z * 21321.5125)));
+//   transformedNormal = rotateY(transformedNormal, offsetDistance * 0.02 * sin(fract(position.z * 51211.41)));
 
    vNormal = normalize( transformedNormal );
 

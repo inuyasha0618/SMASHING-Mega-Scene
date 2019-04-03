@@ -74,9 +74,9 @@ void main() {
     //chunk(normal_fragment);
 
 
-    normal = rotateZ(normal, (random(gl_PointCoord.xy + 2.0) - 0.5) * normalNoise);
-    normal = rotateY(normal, (random(gl_PointCoord.yx) - 0.5) * normalNoise);
-    normal = normalize(normal);
+    // normal = rotateZ(normal, (random(gl_PointCoord.xy + 2.0) - 0.5) * normalNoise);
+    // normal = rotateY(normal, (random(gl_PointCoord.yx) - 0.5) * normalNoise);
+    // normal = normalize(normal);
 
     //chunk(emissivemap_fragment);
     //chunk(shadowmap_fragment);
